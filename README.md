@@ -11,3 +11,5 @@
 ![alt text](ss/image3.png)
 ![alt text](ss/image4.png)
 
+## Packing widgets
+![alt text](ss/image5.png)

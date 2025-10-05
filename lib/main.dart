@@ -15,14 +15,14 @@ class MyApp extends StatelessWidget {
       title: 'Flutter layout demo',
       home: Scaffold(
         appBar: AppBar(title: const Text('Flutter layout demo')),
-        // Change to buildColumn() for the other column example
-        body: Center(child: buildRow()),
+        // Change to buildFoo() for the other examples
+        body: Center(child: buildExpandedImagesWithFlex()),
       ),
     );
   }
 
-  Widget buildRow() =>
-      // #docregion row
+  Widget buildOverflowingRow() =>
+      // #docregion overflowing-row
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
@@ -31,17 +31,29 @@ class MyApp extends StatelessWidget {
           Image.asset('images/pic3.jpg'),
         ],
       );
-  // #enddocregion row
+  // #enddocregion overflowing-row
 
-  Widget buildColumn() =>
-      // #docregion column
-      Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+  Widget buildExpandedImages() =>
+      // #docregion expanded-images
+      Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Image.asset('images/pic1.jpg'),
-          Image.asset('images/pic2.jpg'),
-          Image.asset('images/pic3.jpg'),
+          Expanded(child: Image.asset('images/pic1.jpg')),
+          Expanded(child: Image.asset('images/pic2.jpg')),
+          Expanded(child: Image.asset('images/pic3.jpg')),
         ],
       );
-  // #enddocregion column
+  // #enddocregion expanded-images
+
+  Widget buildExpandedImagesWithFlex() =>
+      // #docregion expanded-images-with-flex
+      Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Expanded(child: Image.asset('images/pic1.jpg')),
+          Expanded(flex: 2, child: Image.asset('images/pic2.jpg')),
+          Expanded(child: Image.asset('images/pic3.jpg')),
+        ],
+      );
+  // #enddocregion expanded-images-with-flex
 }

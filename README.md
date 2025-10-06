@@ -36,5 +36,4 @@
 
 ### ListTile
 ![alt text](ss/image15.png)
-![alt text](image.png)
 ![alt text](ss/image16.png)
